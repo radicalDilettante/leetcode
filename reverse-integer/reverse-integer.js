@@ -11,7 +11,7 @@ var reverse = function(x) {
         result = x.toString().split("").reverse().join("");
         if(result[result.length-1] == "-"){
             result = "-" + result.split("-")[0];
-        };
+        }
         result = parseInt(result);
         if(result > Math.pow(2,31) - 1 || result < Math.pow(-2,31)){
             return 0;
