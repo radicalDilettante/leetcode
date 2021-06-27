@@ -5,9 +5,9 @@
 var reverse = function(x) {
     if(x > Math.pow(2,31)){
         return 0;
-    };
+    }
     let result = 0;
-    while(x != 0){
+    while(x !== 0){
         result = x.toString().split("").reverse().join("");
         if(result[result.length-1] == "-"){
             result = "-" + result.split("-")[0];
@@ -18,6 +18,6 @@ var reverse = function(x) {
         } else{
             return result;
         }
-    };
+    }
     return result;
-};
+}
