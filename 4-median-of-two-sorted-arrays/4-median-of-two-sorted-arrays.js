@@ -18,7 +18,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
             numbers.push(nums2[r++])
         }
     }
-    01234
+    
     if(length % 2){
         return numbers[parseInt(length / 2)] 
     }else{
