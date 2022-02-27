@@ -3,28 +3,28 @@
  * @param {number} target
  * @return {number[]}
  */
-// const twoSum = function (nums, target) {
-//     let map = {};
-//     for (var i = 0; i < nums.length; i++){
-//         let complement = target - nums[i];
-//         if (map[complement] != null) {
-//             return [map[complement],i]
-//         };
-//         map[nums[i]] = i;
-//     }
-// };
-
-
 var twoSum = function (nums, target) {
-    var map = new Map;
+    var map = {};
     for (var i = 0; i < nums.length; i++){
         var complement = target - nums[i];
-        if (map.has(complement)) {
-            return [map.get(complement),i]
+        if (map[complement] != null) {
+            return [map[complement],i]
         };
-        map.set(nums[i], i);
+        map[nums[i]] = i;
     }
 };
+
+
+// var twoSum = function (nums, target) {
+//     var map = new Map;
+//     for (var i = 0; i < nums.length; i++){
+//         var complement = target - nums[i];
+//         if (map.has(complement)) {
+//             return [map.get(complement),i]
+//         };
+//         map.set(nums[i], i);
+//     }
+// };
 
 
 // const twoSum = function (nums, target) {
