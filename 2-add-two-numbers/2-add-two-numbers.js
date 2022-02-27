@@ -14,35 +14,19 @@ var addTwoNumbers = function(l1, l2) {
         
     let l1p = l1;
     let l2p = l2;
-    let answer=[];
+    let prev = new ListNode();
+    let curr = prev
     
-    
-    let nextDigit = 0;
-    while(l1p || l2p){
-       let i = (l1p? l1p.val : 0) + (l2p ? l2p.val : 0);
-        i += nextDigit
-        let j;
-        if(i >= 10){
-            i -= 10;
-            j = 1;
-        }else{
-            j = 0;
-        }
-      
-        answer.push(i)
-        nextDigit = j;
+    let carry = 0;
+    while(l1p || l2p || carry){
+       let sum = (l1p? l1p.val : 0) + (l2p ? l2p.val : 0) + carry;
+        carry = Math.floor(sum / 10)
+        
+        curr.next = new ListNode(sum % 10);
+        curr = curr.next;
         l1p=l1p?.next;
         l2p=l2p?.next;
+        
     }
-    if(nextDigit){
-        answer.push(nextDigit);
-    }
-    
-    let result;
-    
-    for(let i = answer.length - 1; i >= 0; i--){
-        result = new ListNode(answer[i], result);
-    }
-    
-    return result;
+    return prev.next
 };
